@@ -35,7 +35,6 @@ This role installs and configures gitolite from upstream Git repository.
 * `gitolite_user_group`: Configure the name of the group for the gitolite service user (string, default: `git`)
 * `gitolite_user_name`: Configure the name of the gitolite service user (string, default: `git`)
 * `gitolite_user_home`: Configure the home (and service) directory for the gitolite service (string, default: `/srv/git`)
-* `gitolite_install_dir`: Configure the installation directory of gitolite (string, default: `/usr/local/gitolite`)
 * `gitolite_hostname`: Configure the gitolite server hostname (string, default: `localhost`)
 * `gitolite_domainname`: Configure the gitolite server domainname (string, default: `localdomain`)
 * `gitolite_mirroring_peers`: Configure ssh aliases for mirroring (list, default: `[]`)

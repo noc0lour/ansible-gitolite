@@ -52,16 +52,17 @@ repo {{ r.repo }}
 
 {% macro iter_repos(repositories) -%}
 {% for repo in repositories -%}
+{% set create_repo = {'create': false} -%}
 {% for ace in ('admin', 'write', 'read') -%}
 {% if ace in repo -%}
 {% for arg in ('options', 'users') -%}
 {% if arg in repo[ace] -%}
-{% set create_repo = true -%}
+{% set dummy = create_repo.update({'create': true}) %}
 {%- endif %}
 {%- endfor %}
 {%- endif %}
 {%- endfor %}
-{% if create_repo -%}
+{% if create_repo.create -%}
 {{ gitolite_repo(repo) }}
 {%- endif %}
 {%- endfor %}
